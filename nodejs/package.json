@@ -5,6 +5,21 @@
   "license": "ISC",
   "author": "Roy Alcala",
   "main": "main.js",
+  "productName": "Voice-to-Text",
+  "build": {
+    "appId": "com.royalcala.voicetotext",
+    "productName": "Voice-to-Text",
+    "linux": {
+      "icon": "assets/icon.png",
+      "category": "Utility",
+      "desktop": {
+        "Name": "Voice-to-Text",
+        "Comment": "Offline voice-to-text transcription",
+        "Categories": "Utility;Audio;",
+        "StartupNotify": "true"
+      }
+    }
+  },
   "scripts": {
     "start": "electron main.js",
     "build": "electron-builder",
@@ -13,7 +28,8 @@
     "download-model": "cd whisper.cpp && bash models/download-ggml-model.sh base.en",
     "build-whisper": "cd whisper.cpp && make clean && make -j$(nproc)",
     "install-deps": "sudo apt-get update && sudo apt-get install -y build-essential cmake git alsa-utils",
-    "postinstall": "echo 'Run: npm run install-deps && npm run setup'"
+    "install-desktop": "bash -c 'mkdir -p ~/.local/share/applications && cp voice-to-text.desktop ~/.local/share/applications/ && sed -i \"s|Exec=.*|Exec=$PWD/node_modules/.bin/electron $PWD/main.js|\" ~/.local/share/applications/voice-to-text.desktop && sed -i \"s|Path=.*|Path=$PWD|\" ~/.local/share/applications/voice-to-text.desktop'",
+    "postinstall": "echo 'Run: npm run install-deps && npm run setup && npm run install-desktop'"
   },
   "devDependencies": {
     "electron": "^36.5.0"

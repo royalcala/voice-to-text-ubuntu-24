@@ -111,6 +111,7 @@ npm start
 - `npm run setup` - Download model and build whisper.cpp
 - `npm run download-model` - Download the Whisper base.en model
 - `npm run build-whisper` - Build whisper.cpp from source
+- `npm run install-desktop` - Install desktop integration (proper app name in notifications)
 
 ## Whisper.cpp Setup
 
@@ -159,6 +160,24 @@ bash models/download-ggml-model.sh base
 ```
 
 Update `main.js` to change the model path if needed.
+
+## Desktop Integration
+
+The app includes proper desktop integration for Ubuntu:
+
+- **App Name**: Shows as "Voice-to-Text" in notifications (not "Unknown app")
+- **Desktop Entry**: Can be launched from Applications menu
+- **System Integration**: Proper window class and metadata
+
+### Installing Desktop Integration
+
+The setup script automatically installs desktop integration, but you can also run:
+
+```bash
+npm run install-desktop
+```
+
+This creates a `.desktop` file in `~/.local/share/applications/` so the app appears properly in the system.
 
 ## Project Structure
 

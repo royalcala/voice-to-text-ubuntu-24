@@ -1,0 +1,158 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+
+# Electron build artifacts
+dist/
+build/
+out/
+
+# whisper.cpp build artifacts (keep only essential binaries)
+whisper.cpp/build/CMakeCache.txt
+whisper.cpp/build/CMakeFiles/
+whisper.cpp/build/CTestTestfile.cmake
+whisper.cpp/build/DartConfiguration.tcl
+whisper.cpp/build/Makefile
+whisper.cpp/build/Testing/
+whisper.cpp/build/cmake_install.cmake
+whisper.cpp/build/compile_commands.json
+whisper.cpp/build/examples/
+whisper.cpp/build/ggml/
+whisper.cpp/build/src/
+whisper.cpp/build/tests/
+whisper.cpp/build/whisper-config.cmake
+whisper.cpp/build/whisper-version.cmake
+whisper.cpp/build/whisper.pc
+# Keep whisper-cli binary but exclude other compiled tools
+whisper.cpp/build/bin/bench
+whisper.cpp/build/bin/main
+whisper.cpp/build/bin/quantize
+whisper.cpp/build/bin/test-vad
+whisper.cpp/build/bin/test-vad-full
+whisper.cpp/build/bin/vad-speech-segments
+whisper.cpp/build/bin/whisper-bench
+whisper.cpp/build/bin/whisper-server
+# whisper-cli is kept for the app to use
+
+whisper.cpp/*.o
+whisper.cpp/*.a
+whisper.cpp/*.so
+whisper.cpp/*.dylib
+whisper.cpp/*.dll
+
+# whisper.cpp model files (large files - keep only the one we need)
+whisper.cpp/models/for-tests-*.bin
+whisper.cpp/models/ggml-tiny.bin
+whisper.cpp/models/ggml-tiny.en.bin
+whisper.cpp/models/ggml-small.bin
+whisper.cpp/models/ggml-small.en.bin
+whisper.cpp/models/ggml-medium.bin
+whisper.cpp/models/ggml-medium.en.bin
+whisper.cpp/models/ggml-large.bin
+# Keep ggml-base.en.bin as it's the one used by the app
+whisper.cpp/models/*.pt
+whisper.cpp/models/*.ggml
+
+# Temporary audio and transcription files
+*.wav
+*.mp3
+*.m4a
+*.flac
+*.ogg
+*.aac
+recorded.*
+transcribed.*
+output.*
+temp_*
+recording_*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+.temp/
+*.bak
+*.backup

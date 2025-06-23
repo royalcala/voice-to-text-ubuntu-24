@@ -113,9 +113,10 @@ function updateTrayIcon() {
 function showNotification(title, body) {
   if (Notification.isSupported()) {
     new Notification({
-      title,
+      title: `Voice-to-Text: ${title}`,
       body,
-      silent: false
+      silent: false,
+      icon: 'microphone' // System icon
     }).show();
   }
 }
@@ -215,6 +216,13 @@ function toggleRecording() {
 // App event handlers
 app.whenReady().then(() => {
   console.log('🎤 Voice-to-Text Electron App Starting...');
+  
+  // Set app metadata for proper notifications
+  app.setName('Voice-to-Text');
+  app.setDesktopName('Voice-to-Text');
+  if (process.platform === 'linux') {
+    app.setPath('desktop', '/usr/share/applications');
+  }
   
   // Register only Super+Space for voice recording
   const ret = globalShortcut.register('Super+Space', () => {

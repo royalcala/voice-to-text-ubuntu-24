@@ -84,7 +84,31 @@ fi
 
 cd ..
 
-# Step 7: Test setup
+# Step 7: Install desktop integration
+echo "🖥️  Setting up desktop integration..."
+# Copy desktop entry to user applications
+mkdir -p ~/.local/share/applications
+DESKTOP_FILE="$HOME/.local/share/applications/voice-to-text.desktop"
+cat > "$DESKTOP_FILE" << EOF
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Voice-to-Text
+Comment=Offline voice-to-text transcription with global hotkey
+Exec=$PWD/node_modules/.bin/electron $PWD/main.js
+Icon=microphone
+Categories=Utility;Audio;Accessibility;
+StartupNotify=true
+NoDisplay=false
+Path=$PWD
+Keywords=voice;speech;text;transcription;whisper;
+StartupWMClass=voice-to-text-electron
+EOF
+
+chmod +x "$DESKTOP_FILE"
+print_status "Desktop integration installed"
+
+# Step 8: Test setup
 echo "🧪 Testing setup..."
 if [ -f "whisper.cpp/build/bin/whisper-cli" ] && [ -f "whisper.cpp/models/ggml-base.en.bin" ]; then
     print_status "Setup completed successfully!"

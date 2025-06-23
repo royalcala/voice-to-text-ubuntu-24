@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Voice-to-Text
+Comment=Offline voice-to-text transcription with global hotkey
+Exec=electron main.js
+Icon=microphone
+Categories=Utility;Audio;Accessibility;
+StartupNotify=true
+NoDisplay=false
+Path=REPLACE_WITH_PATH
+Keywords=voice;speech;text;transcription;whisper;
+StartupWMClass=voice-to-text-electron
