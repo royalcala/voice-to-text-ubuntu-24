@@ -1,0 +1,4 @@
+[submodule "nodejs/whisper.cpp"]
+	path = nodejs/whisper.cpp
+	url = https://github.com/ggerganov/whisper.cpp.git
+	branch = master

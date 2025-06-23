@@ -1,0 +1,21 @@
+{
+  "name": "voice-to-text-electron",
+  "version": "1.0.0",
+  "description": "Offline voice-to-text desktop app with global hotkey support",
+  "license": "ISC",
+  "author": "Roy Alcala",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron main.js",
+    "build": "electron-builder",
+    "dev": "electron main.js",
+    "setup": "npm run download-model && npm run build-whisper",
+    "download-model": "cd whisper.cpp && bash models/download-ggml-model.sh base.en",
+    "build-whisper": "cd whisper.cpp && make clean && make -j$(nproc)",
+    "install-deps": "sudo apt-get update && sudo apt-get install -y build-essential cmake git alsa-utils",
+    "postinstall": "echo 'Run: npm run install-deps && npm run setup'"
+  },
+  "devDependencies": {
+    "electron": "^36.5.0"
+  }
+}

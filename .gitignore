@@ -1,0 +1,138 @@
+# Node.js dependencies
+nodejs/node_modules/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+nodejs/package-lock.json
+
+# Electron build artifacts
+dist/
+build/
+out/
+
+# whisper.cpp is a submodule/external repo - exclude most but keep essentials
+nodejs/whisper.cpp/.git/
+nodejs/whisper.cpp/.github/
+nodejs/whisper.cpp/.devops/
+nodejs/whisper.cpp/ci/
+nodejs/whisper.cpp/tests/
+nodejs/whisper.cpp/examples/
+nodejs/whisper.cpp/bindings/
+nodejs/whisper.cpp/samples/
+nodejs/whisper.cpp/scripts/
+nodejs/whisper.cpp/grammars/
+
+# whisper.cpp - treat as external dependency (users will clone/download)
+# Include only essential files if manually added
+nodejs/whisper.cpp/build/
+nodejs/whisper.cpp/models/*.bin
+!nodejs/whisper.cpp/models/ggml-base.en.bin
+nodejs/whisper.cpp/*.o
+nodejs/whisper.cpp/*.a
+nodejs/whisper.cpp/*.so
+nodejs/whisper.cpp/*.dylib
+nodejs/whisper.cpp/*.dll
+nodejs/whisper.cpp/obj/
+nodejs/whisper.cpp/.vs/
+
+# Temporary audio and transcription files
+nodejs/*.wav
+nodejs/*.mp3
+nodejs/*.m4a
+nodejs/*.flac
+nodejs/*.ogg
+nodejs/*.aac
+nodejs/recorded.*
+nodejs/transcribed.*
+nodejs/output.*
+nodejs/temp_*
+nodejs/recording_*
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Log files
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by tools like istanbul
+coverage/
+*.lcov
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
+.parcel-cache
+
+# next.js build output
+.next
+
+# nuxt.js build output
+.nuxt
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# Temporary files
+*.tmp
+*.temp
+temp/
+.temp/
+*.bak
+*.backup
